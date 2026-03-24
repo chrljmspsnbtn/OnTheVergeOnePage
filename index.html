@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="On The Verge — A youth-led social enterprise committed to unlocking human potential through belief, early intervention, and the courage to begin." />
+  <meta property="og:title" content="On The Verge — Where Potential Begins" />
+  <meta property="og:description" content="Every person alive is on the verge of something they have not yet allowed themselves to become. We exist for that moment." />
+  <meta name="theme-color" content="#e05a3a" />
+  <title>On The Verge — Where Potential Begins</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<!-- ══════════════════════════════
+     NAVIGATION
+══════════════════════════════ -->
+<nav role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="nav-logo" aria-label="On The Verge — home">
+    <span class="above">On The</span>
+    <span class="wordmark">verge</span>
+  </a>
+  <ul class="nav-links" id="nav-links" role="list">
+    <li><a href="#about">About</a></li>
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#what-we-do">What We Do</a></li>
+    <li><a href="#why">Why It Matters</a></li>
+    <li><a href="#volunteer" class="nav-cta">Volunteer</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section id="hero" aria-labelledby="hero-title">
+
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-circle hero-circle-1"></div>
+    <div class="hero-circle hero-circle-2"></div>
+    <div class="hero-circle hero-circle-3"></div>
+  </div>
+
+  <!-- The unfinished circle arc — built with precise math so it renders correctly -->
+  <!--
+    Circle center: 190,190  Radius: 160
+    Arc starts at top: (190, 30)
+    Gap opens at ~50deg clockwise from top:
+      end_x = 190 + 160*sin(50deg) = 190 + 122.5 = 312.5
+      end_y = 190 - 160*cos(50deg) = 190 - 102.8 = 87.2
+    large-arc-flag=1 because we travel > 180deg
+    sweep-flag=1 for clockwise
+  -->
+  <div class="hero-arc-wrap" aria-hidden="true">
+    <svg viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- outer arc -->
+      <path
+        d="M 190 30 A 160 160 0 1 1 312 87"
+        stroke="#e05a3a" stroke-width="7" stroke-linecap="round" fill="none"
+      />
+      <!-- inner echo arc, slightly smaller radius -->
+      <path
+        d="M 190 48 A 142 142 0 1 1 302 99"
+        stroke="#e05a3a" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.18"
+      />
+      <!-- dot at the open end of the arc -->
+      <circle cx="312" cy="87" r="10" fill="#e05a3a"/>
+      <circle cx="312" cy="87" r="4.5" fill="#ffffff"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">A Youth-Led Social Enterprise</p>
+    <h1 class="hero-title" id="hero-title">
+      Where<br><em>Potential</em><br>Begins.
+    </h1>
+    <p class="hero-sub">
+      Every person alive is on the verge of something they have not yet allowed themselves to become. We exist for that moment.
+    </p>
+    <div class="hero-actions">
+      <a href="#about" class="btn btn-primary">Learn More</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════
+     ABOUT US
+══════════════════════════════ -->
+<section id="about" aria-labelledby="about-title">
+  <div class="about-grid">
+
+    <div class="about-visual" aria-hidden="true">
+      <div class="about-arc-box">
+        <!--
+          Smaller arc for about section
+          Center: 150,150  Radius: 120
+          Start top: (150, 30)
+          End at ~50deg: x=150+120*sin50=241.9, y=150-120*cos50=72.8
+        -->
+        <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M 150 30 A 120 120 0 1 1 242 73"
+            stroke="#e05a3a" stroke-width="8" stroke-linecap="round" fill="none"
+          />
+          <path
+            d="M 150 48 A 102 102 0 1 1 229 82"
+            stroke="#e05a3a" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.18"
+          />
+          <circle cx="242" cy="73" r="9" fill="#e05a3a"/>
+          <circle cx="242" cy="73" r="4" fill="#f5f1ea"/>
+        </svg>
+      </div>
+      <div class="about-stat">
+        <div class="num">3</div>
+        <div class="lbl">Root causes identified</div>
+      </div>
+    </div>
+
+    <div class="about-text reveal">
+      <p class="section-label">About Us</p>
+      <div class="coral-rule"></div>
+      <h2 class="section-title" id="about-title">
+        We do not believe<br>in <em>wasted people.</em>
+      </h2>
+      <p class="section-body">
+        On The Verge is a youth-led social enterprise built on one conviction: that unrealized potential is not a personal failure — it is a systemic one, and a solvable one.
+      </p>
+      <br>
+      <p class="section-body">
+        We intervene early — in schools, in communities, and in the spaces where potential is most at risk of being abandoned. Through belief-based development, mindset intervention, and research-grounded tools, we meet people at the exact moment they are on the verge of giving up — and walk with them across it.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     MISSION & VISION
+══════════════════════════════ -->
+<section id="mission" aria-labelledby="mission-title">
+
+  <div class="mission-header">
+    <p class="section-label reveal">Mission &amp; Vision</p>
+    <div class="coral-rule reveal"></div>
+    <h2 class="section-title reveal" id="mission-title">
+      What we stand for.<br>Where we are <em>going.</em>
+    </h2>
+  </div>
+
+  <div class="mv-grid">
+
+    <article class="mv-card reveal">
+      <div class="mv-card-bg-num" aria-hidden="true">01</div>
+      <p class="mv-card-label">Our Mission</p>
+      <h3 class="mv-card-title">Turning suppressed potential into lived reality.</h3>
+      <p class="mv-card-body">
+        On The Verge exists to meet people at the edge of what they almost didn't try — and help them cross it. Through early intervention, belief-based development, and the courage to take the first step before being ready, we turn suppressed potential into lived reality.
+      </p>
+    </article>
+
+    <article class="mv-card reveal">
+      <div class="mv-card-bg-num" aria-hidden="true">02</div>
+      <p class="mv-card-label">Our Vision</p>
+      <h3 class="mv-card-title">A world that no longer wastes its people.</h3>
+      <p class="mv-card-body">
+        We envision a generation that tries before it is ready, believes before it has proof, and builds the life it was always capable of — not the one it was told to settle for. A world where the gap between who a person is and who they could be is no longer decided by fear.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     WHAT WE DO
+══════════════════════════════ -->
+<section id="what-we-do" aria-labelledby="wwd-title">
+
+  <div class="wwd-header">
+    <div class="wwd-badge" aria-label="Work currently in progress">
+      <span class="dot" aria-hidden="true"></span>
+      Work in Progress
+    </div>
+    <p class="section-label">What We Do</p>
+    <div class="coral-rule"></div>
+    <h2 class="section-title reveal" id="wwd-title">
+      Our work is <em>just beginning.</em>
+    </h2>
+    <p class="section-body reveal">
+      On The Verge is currently in its foundational stage — building the evidence base, developing the intervention model, and testing our approach with real people. Here is what our work looks like.
+    </p>
+  </div>
+
+  <div class="wwd-cards">
+
+    <article class="wwd-card reveal">
+      <div class="wwd-card-num" aria-hidden="true">01</div>
+      <h3 class="wwd-card-title">Primary Research &amp; Survey</h3>
+      <p class="wwd-card-body">
+        We are currently conducting a baseline survey on fear, ambition, creativity, and the forces that shape — and limit — human potential. Responses are being collected from students, educators, graduates, parents, and working adults.
+      </p>
+    </article>
+
+    <article class="wwd-card reveal">
+      <div class="wwd-card-num" aria-hidden="true">02</div>
+      <h3 class="wwd-card-title">Mindset Intervention</h3>
+      <p class="wwd-card-body">
+        We are developing a belief-based intervention program to be tested in schools and community settings. Built on three evidence-based solution claims: belief as the first step, visualization as neurological rehearsal, and productive failure as the fastest path to growth.
+      </p>
+    </article>
+
+    <article class="wwd-card reveal">
+      <div class="wwd-card-num" aria-hidden="true">03</div>
+      <h3 class="wwd-card-title">Community &amp; Outreach</h3>
+      <p class="wwd-card-body">
+        Through talks, workshops, podcast conversations, and social media, we are building a community of people who believe that the gap between who they are and who they could be is closeable — and are actively working to close it.
+      </p>
+    </article>
+
+  </div>
+
+  <div class="wwd-note reveal" role="note">
+    <strong>Please note:</strong> On The Verge is actively growing. Our survey is ongoing, our intervention model is in development, and our programs are being built in real time. If you want to be part of what comes next — we want to hear from you.
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════
+     WHY IT MATTERS
+══════════════════════════════ -->
+<section id="why" aria-labelledby="why-title">
+  <div class="why-inner">
+
+    <p class="section-label reveal">Why Our Work Matters</p>
+    <div class="coral-rule reveal"></div>
+    <h2 class="section-title reveal" id="why-title">
+      The cost of doing <em>nothing</em><br>is not neutral.
+    </h2>
+
+    <p class="why-body reveal">
+      Every day, across every school, office, and household, potential dies quietly. Not from lack of talent. Not from lack of intelligence. But from the accumulated weight of fear, judgment, and a culture that teaches people to wait until they are ready — and readiness never comes.
+    </p>
+
+    <blockquote class="why-quote reveal">
+      "Every human being is capable of more than they have been told. On The Verge exists to prove it."
+    </blockquote>
+
+    <div class="why-stats">
+
+      <div class="why-stat reveal">
+        <div class="big">77%</div>
+        <p class="desc">of global workers are disengaged — not from laziness, but from years of suppressed potential.</p>
+      </div>
+
+      <div class="why-stat reveal">
+        <div class="big">50%</div>
+        <p class="desc">of graduates won't apply for jobs they're qualified for because they don't feel ready enough.</p>
+      </div>
+
+      <div class="why-stat reveal">
+        <div class="big">78%</div>
+        <p class="desc">of workers say their greatest career regret was not taking more risks — not that they took too many.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     VOLUNTEER
+══════════════════════════════ -->
+<section id="volunteer" aria-labelledby="volunteer-title">
+  <div class="vol-circle vol-circle-1" aria-hidden="true"></div>
+  <div class="vol-circle vol-circle-2" aria-hidden="true"></div>
+  <div class="vol-inner">
+    <p class="vol-label">Get Involved</p>
+    <h2 class="vol-title" id="volunteer-title">
+      Be part of what<br>we are building.
+    </h2>
+    <p class="vol-body">
+      On The Verge is looking for people who believe that unrealized potential is a problem worth solving. Whether you have an hour or a commitment — your presence in this mission matters. Every person who joins us is proof of everything we stand for.
+    </p>
+    <a
+      href="https://forms.google.com/[YOUR-GOOGLE-FORM-ID]"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-white"
+      aria-label="Open volunteer interest form in a new tab"
+    >
+      Volunteer With Us &rarr;
+    </a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     CONTACT
+══════════════════════════════ -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="contact-inner">
+
+    <div class="contact-left reveal">
+      <p class="section-label">Contact</p>
+      <div class="coral-rule"></div>
+      <h2 class="section-title" id="contact-title">
+        Let's start<br>a <em>conversation.</em>
+      </h2>
+      <p class="section-body">
+        Whether you are a potential donor, a partner institution, an educator, or simply someone who believes in what we are building — we want to hear from you.
+      </p>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <span class="contact-dot" aria-hidden="true"></span>
+          <a href="mailto:info@ontheverge.cv" aria-label="Email On The Verge">info@ontheverge.cv</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-dot" aria-hidden="true"></span>
+          <span>www.ontheverge.cv</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-dot" aria-hidden="true"></span>
+          <span>Philippines</span>
+        </div>
+      </div>
+
+      <a
+        href="mailto:info@ontheverge.cv?subject=Hello from the On The Verge website"
+        class="btn btn-primary"
+        aria-label="Send an email to On The Verge"
+      >
+        Send Us an Email &rarr;
+      </a>
+    </div>
+
+    <div class="contact-cards reveal">
+
+      <div class="contact-card">
+        <p class="contact-card-title">For Donors &amp; Partners</p>
+        <p class="contact-card-body">
+          Interested in supporting On The Verge or exploring a formal partnership? Reach out and we will send you our concept note and one-pager.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <p class="contact-card-title">For Educators &amp; Institutions</p>
+        <p class="contact-card-body">
+          If you would like to bring On The Verge into your school or organization for a session, workshop, or collaboration, we would love to talk.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <p class="contact-card-title">For Everyone Else</p>
+        <p class="contact-card-body">
+          If something here moved you — write to us. We read every message. You might be more on the verge than you think.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="above">On The</div>
+      <div class="wordmark">verge</div>
+    </div>
+    <p class="footer-tagline">where potential begins</p>
+    <p class="footer-notice">&copy; 2026 On The Verge. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════
+     JAVASCRIPT
+══════════════════════════════ -->
+<script>
+  // Mobile nav
+  const toggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
+    });
+  });
+
+  // Scroll reveal with stagger
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal:not(.visible)'));
+      const idx = siblings.indexOf(entry.target);
+      setTimeout(() => entry.target.classList.add('visible'), Math.max(0, idx) * 90);
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-links a');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navItems.forEach(a => a.style.color = '');
+      const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+      if (active) active.style.color = '#e05a3a';
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(s => sectionObserver.observe(s));
+
+  // Nav shadow on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20
+      ? '0 2px 24px rgba(0,0,0,0.08)'
+      : 'none';
+  }, { passive: true });
+</script>
+
+</body>
+</html>
