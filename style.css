@@ -393,3 +393,9 @@ footer { background: var(--dark); padding: 2.5rem 5vw; }
   .team-grid      { grid-template-columns: 1fr 1fr; }
   .faq-item summary { padding: 1.15rem 3.5rem 1.15rem 1.1rem; font-size: 1rem; }
 }
+
+.faq-item .faq-answer,
+.faq-item .faq-answer p,
+.faq-item .faq-answer * {
+  color: var(--coral) !important;
+}
