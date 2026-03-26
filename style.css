@@ -473,3 +473,16 @@ footer { background: var(--dark); padding: 2.5rem 5vw; }
     line-height: 1.9;
   }
 }
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.contact-actions .btn {
+  min-width: 260px;
+  justify-content: center;
+}
