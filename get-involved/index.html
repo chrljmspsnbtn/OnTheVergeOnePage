@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="On The Verge" />
+  <meta name="theme-color" content="#e05a3a" />
+  <title>On The Verge</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
 
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo" aria-label="On The Verge — home">
+      <span class="above">On The</span>
+      <span class="wordmark">verge</span>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="../about/index.html">About</a></li>
+      <li><a href="../story/index.html">Our Story</a></li>
+      <li><a href="../founders-message/index.html">Founder's Message</a></li>
+      <li><a href="../programs-faq/index.html">Programs &amp; FAQ</a></li>
+      <li><a href="../team/index.html">Team</a></li>
+      <li><a href="../why-it-matters/index.html">Why It Matters</a></li>
+      <li><a href="../get-involved/index.html" class="nav-cta">Volunteer / Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page-main">
+    <!-- PASTE THE CORRECT SECTION(S) HERE FROM index-old.html || GET INVOLVED-->
+     <section id="volunteer" aria-labelledby="volunteer-title">
+  <div class="vol-circle vol-circle-1" aria-hidden="true"></div>
+  <div class="vol-circle vol-circle-2" aria-hidden="true"></div>
+  <div class="vol-inner">
+    <p class="vol-label">Get Involved</p>
+    <h2 class="vol-title" id="volunteer-title">Be part of what<br>we are building.</h2>
+    <p class="vol-body">On The Verge is looking for people who believe that unrealized potential is a problem worth solving. Whether you have an hour or a commitment — your presence in this mission matters. Every person who joins us is proof of everything we stand for.</p>
+    <a
+      href="https://forms.zohopublic.com/chrljmspsnbtnonthe1/form/OnTheVergeVolunteeringInterestForm/formperma/xF6bgIK2gnk4hYk0jzhGBD-_GIkVhCjYU5-NWetxz7U"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-white"
+      aria-label="Open volunteer interest form"
+    >Volunteer With Us &rarr;</a>
+  </div>
+</section>
+<section id="contact" aria-labelledby="contact-title">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <p class="section-label">Contact</p>
+      <div class="coral-rule"></div>
+      <h2 class="section-title" id="contact-title">Let's start<br>a <em>conversation.</em></h2>
+      <p class="section-body">Whether you are a potential donor, a partner institution, an educator, or simply someone who believes in what we are building — we want to hear from you.</p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <span class="contact-dot" aria-hidden="true"></span>
+          <a href="mailto:info@ontheverge.cv">info@ontheverge.cv</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-dot" aria-hidden="true"></span>
+          <span>www.ontheverge.cv</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-dot" aria-hidden="true"></span>
+          <span>Philippines</span>
+        </div>
+      </div>
+      <a href="mailto:info@ontheverge.cv?subject=Inquiry - Website" class="btn btn-primary">
+        Send Us an Email &rarr;
+      </a>
+    </div>
+    <div class="contact-cards reveal">
+      <div class="contact-card">
+        <p class="contact-card-title">For Donors &amp; Partners</p>
+        <p class="contact-card-body">Interested in supporting On The Verge or exploring a collaboration or partnership? Reach out and we'll setup a quick 10 minute introdcutory meeting.</p>
+      </div>
+      <div class="contact-card">
+        <p class="contact-card-title">For Schools, Universities & &amp; Institutions</p>
+        <p class="contact-card-body">If you would like to bring On The Verge into your school or organization for a session, workshop, or collaboration, we would love to talk.</p>
+      </div>
+      <div class="contact-card">
+        <p class="contact-card-title">For Everyone Else</p>
+        <p class="contact-card-body">If something here moved you — write to us. We read every message. You might be more on the verge than you think. We will be with you, every step of the way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
+</main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <div class="above">On The</div>
+        <div class="wordmark">verge</div>
+      </div>
+      <p class="footer-tagline">where potential begins</p>
+      <p class="footer-notice">&copy; 2026 On The Verge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal:not(.visible)'));
+        const idx = Math.max(0, siblings.indexOf(entry.target));
+        setTimeout(() => entry.target.classList.add('visible'), idx * 90);
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.08)' : 'none';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
