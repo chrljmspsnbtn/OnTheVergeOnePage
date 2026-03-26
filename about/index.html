@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="On The Verge" />
+  <meta name="theme-color" content="#e05a3a" />
+  <title>On The Verge</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
 
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo" aria-label="On The Verge — home">
+      <span class="above">On The</span>
+      <span class="wordmark">verge</span>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="../about/index.html">About</a></li>
+      <li><a href="../story/index.html">Our Story</a></li>
+      <li><a href="../founders-message/index.html">Founder's Message</a></li>
+      <li><a href="../programs-faq/index.html">Programs &amp; FAQ</a></li>
+      <li><a href="../team/index.html">Team</a></li>
+      <li><a href="../why-it-matters/index.html">Why It Matters</a></li>
+      <li><a href="../get-involved/index.html" class="nav-cta">Volunteer / Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page-main">
+    <!-- PASTE THE CORRECT SECTION(S) HERE FROM index-old.html || ABOUT US -->
+<section id="about" aria-labelledby="about-title">
+  <div class="about-grid">
+
+    <div class="about-visual" aria-hidden="true">
+      <div class="about-arc-box">
+        <!-- Center: (150,150) Radius: 120
+             End (~50°): x=150+120·sin50°≈242, y=150−120·cos50°≈73 -->
+        <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 150 30 A 120 120 0 1 1 242 73"
+            stroke="#e05a3a" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <path d="M 150 48 A 102 102 0 1 1 229 82"
+            stroke="#e05a3a" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.18"/>
+          <circle cx="242" cy="73" r="9" fill="#e05a3a"/>
+          <circle cx="242" cy="73" r="4" fill="#f5f1ea"/>
+        </svg>
+      </div>
+      <div class="about-stat">
+        <div class="num">3</div>
+        <div class="lbl">Root causes identified</div>
+      </div>
+    </div>
+
+    <div class="about-text reveal">
+      <p class="section-label">About Us</p>
+      <div class="coral-rule"></div>
+      <h2 class="section-title" id="about-title">
+        We do not believe<br>in <em>wasted people.</em>
+      </h2>
+      <p class="section-body">
+        On The Verge is a youth-led social enterprise built on one conviction: that unrealized potential is not a personal failure — it is a systemic one, and a solvable one.
+      </p>
+      <br>
+      <p class="section-body">
+        We intervene early — in schools, in communities, and in the spaces where potential is most at risk of being abandoned. Through belief-based development, mindset intervention, and research-grounded tools, we meet people at the exact moment they are on the verge of giving up — and walk with them across it.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="mission" aria-labelledby="mission-title">
+  <div class="mission-header">
+    <p class="section-label reveal">Mission &amp; Vision</p>
+    <div class="coral-rule reveal"></div>
+    <h2 class="section-title reveal" id="mission-title">
+      What we stand for.<br>Where we are <em>going.</em>
+    </h2>
+  </div>
+  <div class="mv-grid">
+    <article class="mv-card reveal">
+      <div class="mv-card-bg-num" aria-hidden="true">01</div>
+      <p class="mv-card-label">Our Mission</p>
+      <h3 class="mv-card-title">Turning suppressed potential into lived reality.</h3>
+      <p class="mv-card-body">On The Verge exists to meet people at the edge of what they almost didn't try — and help them cross it. Through early intervention, belief-based development, and the courage to take the first step before being ready, we turn suppressed potential into lived reality.</p>
+    </article>
+    <article class="mv-card reveal">
+      <div class="mv-card-bg-num" aria-hidden="true">02</div>
+      <p class="mv-card-label">Our Vision</p>
+      <h3 class="mv-card-title">A world that no longer wastes its people.</h3>
+      <p class="mv-card-body">We envision a generation that tries before it is ready, believes before it has proof, and builds the life it was always capable of — not the one it was told to settle for. A world where the gap between who a person is and who they could be is no longer decided by fear.</p>
+    </article>
+  </div>
+</section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <div class="above">On The</div>
+        <div class="wordmark">verge</div>
+      </div>
+      <p class="footer-tagline">where potential begins</p>
+      <p class="footer-notice">&copy; 2026 On The Verge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal:not(.visible)'));
+        const idx = Math.max(0, siblings.indexOf(entry.target));
+        setTimeout(() => entry.target.classList.add('visible'), idx * 90);
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.08)' : 'none';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
