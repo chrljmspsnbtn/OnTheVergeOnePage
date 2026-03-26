@@ -103,43 +103,62 @@
     </div>
   </footer>
 
-  <script>
-    const toggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
 
-    toggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
+  toggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
     });
+  });
 
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        toggle.setAttribute('aria-expanded', false);
-      });
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal:not(.visible)'));
+      const idx = Math.max(0, siblings.indexOf(entry.target));
+      setTimeout(() => entry.target.classList.add('visible'), idx * 90);
+      revealObserver.unobserve(entry.target);
     });
+  }, { threshold: 0.08 });
 
-    const revealEls = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.08)' : 'none';
+  }, { passive: true });
+
+  const founderCard = document.getElementById('founders-message-card');
+
+  if (founderCard) {
+    const founderLines = founderCard.querySelectorAll('.founder-highlight-line');
+
+    const founderObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal:not(.visible)'));
-        const idx = Math.max(0, siblings.indexOf(entry.target));
-        setTimeout(() => entry.target.classList.add('visible'), idx * 90);
-        revealObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.08 });
-    revealEls.forEach(el => revealObserver.observe(el));
 
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.08)' : 'none';
-    }, { passive: true });
-const nav = document.querySelector('nav');
-window.addEventListener('scroll', () => {
-  nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.08)' : 'none';
-}, { passive: true });
-  </script>
+        founderLines.forEach((line, index) => {
+          setTimeout(() => {
+            line.classList.add('is-active');
+          }, index * 220);
+        });
+
+        founderObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.2 });
+
+    founderObserver.observe(founderCard);
+  }
+</script>
 
 </body>
 </html>
