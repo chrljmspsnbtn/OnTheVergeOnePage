@@ -399,3 +399,7 @@ footer { background: var(--dark); padding: 2.5rem 5vw; }
 .faq-item .faq-answer * {
   color: var(--coral) !important;
 }
+
+.page-main {
+  padding-top: 5.5rem;
+}
