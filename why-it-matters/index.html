@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="On The Verge" />
+  <meta name="theme-color" content="#e05a3a" />
+  <title>On The Verge</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
 
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo" aria-label="On The Verge — home">
+      <span class="above">On The</span>
+      <span class="wordmark">verge</span>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="../about/index.html">About</a></li>
+      <li><a href="../story/index.html">Our Story</a></li>
+      <li><a href="../founders-message/index.html">Founder's Message</a></li>
+      <li><a href="../programs-faq/index.html">Programs &amp; FAQ</a></li>
+      <li><a href="../team/index.html">Team</a></li>
+      <li><a href="../why-it-matters/index.html">Why It Matters</a></li>
+      <li><a href="../get-involved/index.html" class="nav-cta">Volunteer / Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page-main">
+    <!-- PASTE THE CORRECT SECTION(S) HERE FROM index-old.html || WHY IT MATTERS-->
+     <section id="why" aria-labelledby="why-title">
+  <div class="why-inner">
+    <p class="section-label reveal">Why Our Work Matters</p>
+    <div class="coral-rule reveal"></div>
+    <h2 class="section-title reveal" id="why-title">
+      The cost of doing <em>nothing</em><br>is not neutral.
+    </h2>
+    <p class="why-body reveal">
+      Every day, across every school, office, and household, potential dies quietly. Not from lack of talent. Not from lack of intelligence. But from the accumulated weight of fear, judgment, and a culture that teaches people to wait until they are ready — and readiness never comes.
+    </p>
+    <blockquote class="why-quote reveal">
+      "Every human being is capable of more than they have been told. On The Verge exists to prove it."
+    </blockquote>
+    <div class="why-stats">
+      <div class="why-stat reveal">
+        <div class="big">77%</div>
+        <p class="desc">of global workers are disengaged — not from laziness, but from years of suppressed potential.</p>
+      </div>
+      <div class="why-stat reveal">
+        <div class="big">50%</div>
+        <p class="desc">of graduates won't apply for jobs they're qualified for because they don't feel ready enough.</p>
+      </div>
+      <div class="why-stat reveal">
+        <div class="big">78%</div>
+        <p class="desc">of workers say their greatest career regret was not taking more risks — not that they took too many.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <div class="above">On The</div>
+        <div class="wordmark">verge</div>
+      </div>
+      <p class="footer-tagline">where potential begins</p>
+      <p class="footer-notice">&copy; 2026 On The Verge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal:not(.visible)'));
+        const idx = Math.max(0, siblings.indexOf(entry.target));
+        setTimeout(() => entry.target.classList.add('visible'), idx * 90);
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.08)' : 'none';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
