@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="On The Verge" />
+  <meta name="theme-color" content="#e05a3a" />
+  <title>On The Verge</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
 
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo" aria-label="On The Verge — home">
+      <span class="above">On The</span>
+      <span class="wordmark">verge</span>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="../about/index.html">About</a></li>
+      <li><a href="../story/index.html">Our Story</a></li>
+      <li><a href="../founders-message/index.html">Founder's Message</a></li>
+      <li><a href="../programs-faq/index.html">Programs &amp; FAQ</a></li>
+      <li><a href="../team/index.html">Team</a></li>
+      <li><a href="../why-it-matters/index.html">Why It Matters</a></li>
+      <li><a href="../get-involved/index.html" class="nav-cta">Volunteer / Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page-main">
+    <!-- PASTE THE CORRECT SECTION(S) HERE FROM index-old.html -->
+     <section id="team" aria-labelledby="team-title">
+  <div class="team-header">
+    <p class="section-label reveal">The Team</p>
+    <div class="coral-rule reveal"></div>
+    <h2 class="section-title reveal" id="team-title">
+      The people <em>behind the work.</em>
+    </h2>
+    <p class="section-body reveal">
+      On The Verge is built by a small, committed founding team. We are young, we are early, and we are exactly the people our mission is about — trying before we are ready.
+    </p>
+  </div>
+
+  <div class="team-grid">
+
+    <!-- Founder — has photo -->
+    <article class="team-card reveal">
+      <div class="team-photo">
+        <!-- Replace src with actual photo path e.g. images/founder.jpg -->
+        <img
+          src="team/images/founder.jpg"
+          alt="Portrait of the Founder"
+          onerror="this.parentElement.innerHTML='<div class=\'team-photo-placeholder\'><svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'#7a7a7a\' stroke-width=\'1.5\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M4 20c0-4 3.6-7 8-7s8 3 8 7\'/></svg><span>Photo coming</span></div>'"
+        />
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Charlie James P. Batin</h3>
+        <p class="team-role">Founder</p>
+        <p class="team-bio">The person who asked the question, built the framework, and refused to wait until everything was ready before beginning.</p>
+      </div>
+    </article>
+
+    <!-- Corporate Secretary — has photo -->
+    <article class="team-card reveal">
+      <div class="team-photo">
+        <!-- Replace src with actual photo path e.g. images/secretary.jpg -->
+        <img
+          src="team/images/secretary.jpg"
+          alt="Portrait of the Corporate Secretary"
+          onerror="this.parentElement.innerHTML='<div class=\'team-photo-placeholder\'><svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'#7a7a7a\' stroke-width=\'1.5\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M4 20c0-4 3.6-7 8-7s8 3 8 7\'/></svg><span>Photo coming</span></div>'"
+        />
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Ghisleen Hannah Baldemor</h3>
+        <p class="team-role">Corporate Secretary</p>
+        <p class="team-bio">Keeping us structured, accountable, and moving. The person who makes sure every important decision is documented and every commitment is kept.</p>
+      </div>
+    </article>
+
+    <!-- Treasurer — no photo -->
+    <article class="team-card reveal">
+      <div class="team-photo">
+        <div class="team-photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>Photo coming</span>
+        </div>
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Vacant</h3>
+        <p class="team-role">Treasurer</p>
+        <p class="team-bio">Stewards of our resources and responsible for ensuring that every peso spent moves the mission forward. Rigorous, trusted, and exact.</p>
+      </div>
+    </article>
+
+    <!-- Chief People Officer — no photo -->
+    <article class="team-card reveal">
+      <div class="team-photo">
+        <div class="team-photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>Photo coming</span>
+        </div>
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Vacant</h3>
+        <p class="team-role">Chief People Officer</p>
+        <p class="team-bio">The person who makes sure our people — team, volunteers, and community — feel seen, supported, and equipped to do their best work for this mission.</p>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="team-note reveal">
+    On The Verge is growing. If you believe in what we are building —
+   <a href="../get-involved/index.html" style="color: var(--coral); border-bottom: 1px solid rgba(224,90,58,0.3);">join us.</a>
+  </p>
+</section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <div class="above">On The</div>
+        <div class="wordmark">verge</div>
+      </div>
+      <p class="footer-tagline">where potential begins</p>
+      <p class="footer-notice">&copy; 2026 On The Verge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal:not(.visible)'));
+        const idx = Math.max(0, siblings.indexOf(entry.target));
+        setTimeout(() => entry.target.classList.add('visible'), idx * 90);
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.08)' : 'none';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
