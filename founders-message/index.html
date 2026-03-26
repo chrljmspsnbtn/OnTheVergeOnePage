@@ -135,6 +135,10 @@
     window.addEventListener('scroll', () => {
       nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.08)' : 'none';
     }, { passive: true });
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.08)' : 'none';
+}, { passive: true });
   </script>
 
 </body>
